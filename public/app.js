@@ -1,7 +1,6 @@
 const db = firebase.firestore()
-
-/* https://sbfl.net/blog/2017/06/01/javascript-reproducible-random/ */
 class Random {
+  /* https://sbfl.net/blog/2017/06/01/javascript-reproducible-random/ */
   constructor(seed = 88675123) {
     this.x = 123456789;
     this.y = 362436069;
@@ -15,7 +14,6 @@ class Random {
     this.x = this.y; this.y = this.z; this.z = this.w;
     return this.w = (this.w ^ (this.w >>> 19)) ^ (t ^ (t >>> 8));
   }
-
   // min以上max以下の乱数を生成する
   nextInt(min, max) {
     const r = Math.abs(this.next());
@@ -82,8 +80,8 @@ const app = new Vue({
     dishId: null,
     dish: null,
     dishLoaded: false,
-    notifyMessages: [],
-    notifyMessagesTimer: null,
+    notifications: [],
+    notificationsTimer: null,
     emojiListVisible: false
   },
   computed: {
@@ -96,11 +94,11 @@ const app = new Vue({
     },
     dishDocumentRef: function() {
       if (!this.dishId) return
-      return db.doc(`/chat/${this.dishId}`)
+      return db.doc(`/dishes/${this.dishId}`)
     },
     messagesCollectionRef: function() {
       if (!this.dishId) return
-      return db.collection(`/chat/${this.dishId}/messages`)
+      return db.collection(`/dishes/${this.dishId}/messages`)
     },
     emojiList: function() {
       return EMOJI_LIST
@@ -137,10 +135,10 @@ const app = new Vue({
       })
       return result
     },
-    showMessages: function(message, type) {
-      this.notifyMessages.push({ type: type, message: message })
+    showNotifications: function(message, type) {
+      this.notifications.push({ type: type, message: message })
       setTimeout(() => {
-        this.notifyMessages.shift()
+        this.notifications.shift()
       }, 3000)
     },
     signInGoogle: function() {
@@ -154,7 +152,7 @@ const app = new Vue({
         .auth()
         .signOut()
         .then(() => {
-          this.showMessages('ログアウトしました', 'success')
+          this.showNotifications('ログアウトしました', 'success')
         })
         .catch(error => {
           console.error(error)
@@ -234,11 +232,11 @@ const app = new Vue({
         return
       }
       if (this.message.length == 0) {
-        this.showMessages('メッセージをいれてね', 'error')
+        this.showNotifications('メッセージをいれてね', 'error')
         return
       }
       if (this.message.length > 1024) {
-        this.showMessages('メッセージが長すぎだよ', 'error')
+        this.showNotifications('メッセージが長すぎだよ', 'error')
         return
       }
       this.emojiListVisible = false
@@ -254,7 +252,7 @@ const app = new Vue({
           this.message = ''
         }).catch(error => {
           console.error(error)
-          this.showMessages('メッセージの書き込みに失敗しました' + error, 'error')
+          this.showNotifications('メッセージの書き込みに失敗しました' + error, 'error')
         })
 
     },
@@ -288,7 +286,7 @@ const app = new Vue({
       if (messages.docs.length) {
         this.lastMessage = messages.docs[messages.docs.length - 1]
       } else {
-        this.showMessages('もうないよ', 'error')
+        this.showNotifications('もうないよ', 'error')
       }
     },
     updateMessageList: function(snapshot) {
@@ -320,22 +318,28 @@ const app = new Vue({
       })
     },
     getDishDocument: async function() {
+      if (!this.dishDocumentRef) return
       const dish = await this.dishDocumentRef.get()
       this.dishLoaded = true
       if (dish.exists) {
         this.dish = dish.data()
         this.$emit('dish-loaded')
       } else {
-        this.showMessages('お皿がみつかりません', 'error')
+        this.showNotifications('お皿がみつかりません', 'error')
       }
     },
     loadDish: function() {
-      const dishId = window.location.hash.slice(1) || window.location.pathname.slice(1)
-      if (!dishId) {
-        console.error('dishIdの取得に失敗しました')
+      const pathname = window.location.pathname.slice(1)
+      if (!pathname) {
+        console.log('pathnameの取得に失敗しました')
         return
       }
-      this.dishId = dishId
+      const result = window.location.pathname.match(/\/\~([a-z0-9]+)/i)
+      if (result[1]) {
+        this.dishId = result[1]
+      } else {
+        console.log('dishId is null')
+      }
     },
     init: function() {
       this.getDishDocument()

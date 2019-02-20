@@ -32,8 +32,8 @@
     </h2>
     <h2 v-else>名前のないお皿 </h2>
 		<p v-if="dish.description">{{ dish.description }}</p>
-    <ul v-if="notifyMessages.length" class="notify">
-      <li v-for="(item, index) in notifyMessages" :class="item.type" index="index">{{ item.message }}</li>
+    <ul v-if="notifications.length" class="notify">
+      <li v-for="(item, index) in notifications" :class="item.type" index="index">{{ item.message }}</li>
     </ul>
 
 		<button @click="loadOldMessageList">過去ログ読み込み</button>
@@ -101,16 +101,10 @@
 <!--<button @click="createCounter">createCounter()</button>-->
 </div>
 
-<!-- update the version number as needed -->
 <script defer src="/__/firebase/5.8.3/firebase-app.js"></script>
-<!-- include only the Firebase features as you need -->
 <script defer src="/__/firebase/5.8.3/firebase-auth.js"></script>
 <script defer src="/__/firebase/5.8.3/firebase-firestore.js"></script>
-<!--
-<script defer src="/__/firebase/5.8.3/firebase-messaging.js"></script>
 <script defer src="/__/firebase/5.8.3/firebase-storage.js"></script>
--->
-<!-- initialize the SDK after all desired features are loaded -->
 <script defer src="/__/firebase/init.js"></script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
