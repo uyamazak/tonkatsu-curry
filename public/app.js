@@ -1,4 +1,12 @@
 const db = firebase.firestore()
+const storageRef = firebase.storage().ref()
+function uuidv4() {
+  /*https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript */
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
 class Random {
   /* https://sbfl.net/blog/2017/06/01/javascript-reproducible-random/ */
   constructor(seed = 88675123) {
@@ -73,8 +81,11 @@ const app = new Vue({
     message: '',
     messageList: [],
     oldMessageList: [],
+    loadOldMessageListDisabled: false,
     messageListLoaded: false,
     messageListIsEmpty: true,
+    uploadedImageUrl: '',
+    uploadedImageFullPath: '',
     selectedEmoji: '',
     lastMessage: null,
     dishId: null,
@@ -135,7 +146,7 @@ const app = new Vue({
       })
       return result
     },
-    showNotifications: function(message, type) {
+    showNotification: function(message, type) {
       this.notifications.push({ type: type, message: message })
       setTimeout(() => {
         this.notifications.shift()
@@ -152,7 +163,7 @@ const app = new Vue({
         .auth()
         .signOut()
         .then(() => {
-          this.showNotifications('ログアウトしました', 'success')
+          this.showNotification('ログアウトしました', 'success')
         })
         .catch(error => {
           console.error(error)
@@ -231,12 +242,12 @@ const app = new Vue({
         console.log('not authenticated, addOmikujiLog skipped')
         return
       }
-      if (this.message.length == 0) {
-        this.showNotifications('メッセージをいれてね', 'error')
+      if (this.message.length == 0 && !this.uploadedImageFullPath) {
+        this.showNotification('メッセージか画像をいれてね', 'error')
         return
       }
       if (this.message.length > 1024) {
-        this.showNotifications('メッセージが長すぎだよ', 'error')
+        this.showNotification('メッセージが長すぎだよ', 'error')
         return
       }
       this.emojiListVisible = false
@@ -246,15 +257,19 @@ const app = new Vue({
         uid: this.user.uid,
         displayName: this.user.displayName
       }
+      if (this.uploadedImageFullPath) {
+        messageData['imagePath'] = this.uploadedImageFullPath
+        messageData['imageUrl'] = await this.getImageUrl(this.uploadedImageFullPath)
+      }
       return this.messagesCollectionRef
         .add(messageData)
         .then(result => {
           this.message = ''
+          this.resetUploadedImage()
         }).catch(error => {
           console.error(error)
-          this.showNotifications('メッセージの書き込みに失敗しました' + error, 'error')
+          this.showNotification('メッセージの書き込みに失敗しました' + error, 'error')
         })
-
     },
     getMessageListOnSnapshot: function(callback) {
       if (!this.isAuthenticated) {
@@ -286,10 +301,11 @@ const app = new Vue({
       if (messages.docs.length) {
         this.lastMessage = messages.docs[messages.docs.length - 1]
       } else {
-        this.showNotifications('もうないよ', 'error')
+        this.showNotification('もうないよ', 'error')
+        this.loadOldMessageListDisabled = true
       }
     },
-    updateMessageList: function(snapshot) {
+    updateMessageList: async function(snapshot) {
       this.messageListLoaded = true
       this.messageListIsEmpty = snapshot.empty
       if (snapshot.empty) {
@@ -306,6 +322,7 @@ const app = new Vue({
       if (!this.lastMessage && snapshot.docs.length) {
         this.lastMessage = snapshot.docs[snapshot.docs.length - 1]
       }
+
       this.$nextTick(() => {
         window.scrollTo(0, document.getElementById('message-form').getBoundingClientRect().y)
       })
@@ -325,7 +342,7 @@ const app = new Vue({
         this.dish = dish.data()
         this.$emit('dish-loaded')
       } else {
-        this.showNotifications('お皿がみつかりません', 'error')
+        this.showNotification('お皿がみつかりません', 'error')
       }
     },
     loadDish: function() {
@@ -340,6 +357,44 @@ const app = new Vue({
       } else {
         console.log('dishId is null')
       }
+    },
+    getImageUrl: async function(fullpath) {
+      const url = await storageRef.child(fullpath).getDownloadURL()
+      return url
+    },
+    uploadImageRef: function(ext) {
+      if (this.user && this.user.uid) {
+        const uuid = uuidv4()
+        return storageRef.child(`images/${this.user.uid}/${uuid}.${ext}`)
+      } else {
+        return
+      }
+    },
+    uploadImage: function(event) {
+      if (!event.target.files.length) return
+      const file = event.target.files[0]
+      if (!file) {
+        console.log('file not found')
+        return
+      }
+      const ext = file.name.match(/\.([a-zA-Z0-9]{3,4})$/)[1]
+      if (!ext) {
+        console.log('ext not found')
+        return
+      }
+      console.log('ext:', ext)
+      const ref = this.uploadImageRef(ext)
+      console.log(ref)
+      ref.put(file).then(async (snapshot) => {
+        console.log(snapshot)
+        this.uploadedImageFullPath = snapshot.metadata.fullPath
+        this.uploadedImageUrl = await this.getImageUrl(snapshot.metadata.fullPath)
+        this.showNotification('アップロードに成功しました', 'sucess')
+      })
+    },
+    resetUploadedImage: function() {
+      this.uploadedImageFullPath = ''
+      this.uploadedImageUrl = ''
     },
     init: function() {
       this.getDishDocument()

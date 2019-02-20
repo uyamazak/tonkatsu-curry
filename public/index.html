@@ -36,7 +36,7 @@
       <li v-for="(item, index) in notifications" :class="item.type" index="index">{{ item.message }}</li>
     </ul>
 
-		<button @click="loadOldMessageList">過去ログ読み込み</button>
+		<button @click="loadOldMessageList" :disabled="loadOldMessageListDisabled">過去ログ読み込み</button>
 		<ul v-if="oldMessageList.length" class="chat">
       <li v-for="(message, index) in oldMessageList"
         :key="message.id"
@@ -47,6 +47,7 @@
 					{{ nanasiName(message.data.uid, message.data.timestamp) }}
 					<span>{{ timestampFormat(message.data.timestamp) }}</span>
 					<span>ID:{{ message.data.uid }}</span>
+          <span v-if="message.data.imagePath">{{ message.data.imagePath }}</span>
 				</div>
         <div class="chat-comment">{{ message.data.content }}</div>
       </li>
@@ -63,9 +64,10 @@
 					{{ nanasiName(message.data.uid, message.data.timestamp) }}
 					<span class="date">{{ timestampFormat(message.data.timestamp) }}</span>
 					<span class="uid">ID:{{ message.data.uid }}</span>
-
+      
 				</div>
 				<div class="chat-comment">{{ message.data.content }}</div>
+        <div v-if="message.data.imageUrl" class="chat-image"><img :src="message.data.imageUrl" alt=""></div>
       </li>
     </ul>
 
@@ -73,14 +75,21 @@
 			<textarea v-model="message" rows="4"></textarea>
 			<button @click="addMessage">書き込み</button>
 			<button @click="emojiListVisible = !emojiListVisible">絵文字</button>
-			<button :disabled="!message.length"@click="message=''">リセット</button>
+			<button :disabled="!message.length" @click="message=''">リセット</button>
+
+      <div>
+        画像:<input accept="image/*" ref="imgFile" @change="uploadImage" type="file">
+        <img v-if="uploadedImageUrl" :src="uploadedImageUrl">
+        <button v-if="uploadedImageUrl" @click="resetUploadedImage">削除</button>
+      </div>
+
 			<ul class="emojis" v-show="emojiListVisible">
 				<li v-for="(emoji, index) in emojiList" :index="index" :key="index">
 					<button @click="insertToMessage(emoji)">{{ emoji }}</button>
 				</li>
 			</ul>
 		</form>
-
+    <hr>
 		<ul class="secret">
 			<li><a href="https://uyamazak.hatenablog.com/">管理人ブログ</a></li>
 			<li><a href="https://untitled-txt.hatenablog.com/">デザイナーブログ</a></li>

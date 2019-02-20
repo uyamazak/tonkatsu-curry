@@ -212,6 +212,10 @@ pre {
   white-space: pre-wrap;
   line-height: 1.2;
 }
+.chat-image img{
+  max-width:200px;
+  height:auto;
+}
 
 .notify {
   color: red;
@@ -237,8 +241,9 @@ pre {
 }
 
 .emojis li {
-  display: inline-block;
   font-size: 1.5rem;
+  width: 2rem;
+  display: inline-block;
   margin: 0 0.4rem 0.4rem 0;
 }
 
