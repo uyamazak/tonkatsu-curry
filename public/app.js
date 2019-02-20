@@ -1,8 +1,6 @@
-/* https://sbfl.net/blog/2017/06/01/javascript-reproducible-random/ */
-const fireStoreSettings = {
-  timestampsInSnapshots: true
-}
 const db = firebase.firestore()
+
+/* https://sbfl.net/blog/2017/06/01/javascript-reproducible-random/ */
 class Random {
   constructor(seed = 88675123) {
     this.x = 123456789;
@@ -148,7 +146,7 @@ const app = new Vue({
     signInGoogle: function() {
       firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider())
     },
-    signInTwitter: function(){
+    signInTwitter: function() {
       firebase.auth().signInWithRedirect(new firebase.auth.TwitterAuthProvider())
     },
     signOut: function() {
