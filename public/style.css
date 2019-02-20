@@ -1,0 +1,430 @@
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  margin: 0
+}
+
+main {
+  display: block
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em
+}
+
+a {
+  background-color: transparent
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted
+}
+
+b,
+strong {
+  font-weight: bolder
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em
+}
+
+small {
+  font-size: 80%
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -.25em
+}
+
+sup {
+  top: -.5em
+}
+
+img {
+  border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0
+}
+
+button,
+input {
+  overflow: visible
+}
+
+button,
+select {
+  text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+  -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+fieldset {
+  padding: .35em .75em .625em
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal
+}
+
+progress {
+  vertical-align: baseline
+}
+
+textarea {
+  overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+
+details {
+  display: block
+}
+
+summary {
+  display: list-item
+}
+
+template {
+  display: none
+}
+
+[hidden] {
+  display: none
+}
+
+/*# sourceMappingURL=normalize.min.css.map */
+html {
+  font-size: 100%;
+}
+
+body {
+  /*font-family: "ＭＳ ゴシック", sans-serif;*/
+  font-family: 'ＭＳ Ｐゴシック', 'MS PGothic', '梅Pゴシック', Textar, sans-serif;
+  font-size: 1rem;
+  background-color: #FF9900;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Anone%3B%7D.cls-2%7Bopacity%3A0.5%3B%7D.cls-3%7Bfill%3A%23fff%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3E%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%206%3C%2Ftitle%3E%3Cg%20id%3D%22%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC_2%22%20data-name%3D%22%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%202%22%3E%3Cg%20id%3D%22%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC_1-2%22%20data-name%3D%22%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%201%22%3E%3Crect%20class%3D%22cls-1%22%20width%3D%22400%22%20height%3D%22400%22%2F%3E%3Cg%20class%3D%22cls-2%22%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M54.63%2C150.16l3.74%2C3.52-4.44%2C5.41%2C17.51%2C16.57-4%2C4.67L50.17%2C164l-3.87%2C6.48-4.92-4.77Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M68.78%2C146.73q4-4.87%2C9.26-2.25a17.63%2C17.63%2C0%2C0%2C1%2C5%2C4.06A13.58%2C13.58%2C0%2C0%2C1%2C86%2C153.82a8.67%2C8.67%2C0%2C0%2C1-.47%2C5.89%2C11.9%2C11.9%2C0%2C0%2C1-2.81%2C3.79%2C7.1%2C7.1%2C0%2C0%2C1-5.64%2C2c-2.1-.21-4.37-1.6-6.81-4.15a13.21%2C13.21%2C0%2C0%2C1-3.77-7.76A8.91%2C8.91%2C0%2C0%2C1%2C68.78%2C146.73ZM80.65%2C160c1.17-.74%2C1.43-2%2C.79-3.68a13.28%2C13.28%2C0%2C0%2C0-3-4%2C33.78%2C33.78%2C0%2C0%2C0-3.19-2.85%2C2.69%2C2.69%2C0%2C0%2C0-2.67-.65A2.61%2C2.61%2C0%2C0%2C0%2C71%2C152.15c.54%2C2.4%2C2.15%2C4.59%2C4.82%2C6.59Q78.89%2C161.1%2C80.65%2C160Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M95.16%2C148.85l-3.89%2C4.36L76.94%2C137.57l3.92-3.76%2C1.61%2C1.63a10.21%2C10.21%2C0%2C0%2C1%2C2.17-6.29c1.32-1.49%2C2.59-2.26%2C3.8-2.33a5.7%2C5.7%2C0%2C0%2C1%2C3.37.71%2C24.43%2C24.43%2C0%2C0%2C1%2C3.28%2C2.54l9.18%2C8.56-4.37%2C4.9-5.05-5.27q-2.46-2.58-4.28-4.19c-1.27-1.14-2.2-1.52-2.79-1.16a2.62%2C2.62%2C0%2C0%2C0-1.1%2C1.88c-.15%2C1-.24%2C1.77-.28%2C2.24a9.6%2C9.6%2C0%2C0%2C0%2C.28%2C3.12A40.8%2C40.8%2C0%2C0%2C0%2C90.13%2C144Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M110.35%2C132l-4.66%2C5-21-21.22%2C4.72-4%2C9.24%2C9.77-1-14.29%2C5.69.49.92%2C10.75%2C12.53%2C2-.78%2C5.8q-3.48-.81-7.15-1.41c-2.64-.32-5.19-.68-7.63-1.08Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M113.78%2C105.47l-4.72.57a16.06%2C16.06%2C0%2C0%2C1%2C.56-4.47%2C7.91%2C7.91%2C0%2C0%2C1%2C2.32-3.47%2C5.92%2C5.92%2C0%2C0%2C1%2C4.76-1.48%2C7.88%2C7.88%2C0%2C0%2C1%2C2.9%2C1.25%2C26.38%2C26.38%2C0%2C0%2C1%2C3.82%2C3.21l7.39%2C7.35-4%2C5-1.35-2.34a15.35%2C15.35%2C0%2C0%2C1-1%2C5.2%2C4.64%2C4.64%2C0%2C0%2C1-4.39%2C2.58c-1.28%2C0-2.7-.69-4.26-2.08a8.37%2C8.37%2C0%2C0%2C1-2.57-4.2%2C7.2%2C7.2%2C0%2C0%2C1%2C.87-6.1%2C7.68%2C7.68%2C0%2C0%2C1%2C2.11-1.94%2C6.75%2C6.75%2C0%2C0%2C1%2C2.78-.77%2C11%2C11%2C0%2C0%2C0-2.78-2.67c-.75-.29-1.38%2C0-1.86%2C1A9.12%2C9.12%2C0%2C0%2C0%2C113.78%2C105.47Zm7.94%2C6.51a5.48%2C5.48%2C0%2C0%2C0%2C.88-2.27c.38-1.7-.09-2.75-1.39-3.15a2.24%2C2.24%2C0%2C0%2C0-2.18.73%2C4.39%2C4.39%2C0%2C0%2C0-.71%2C1.66%2C3.41%2C3.41%2C0%2C0%2C0%2C.59%2C3.2%2C1.62%2C1.62%2C0%2C0%2C0%2C2.81-.17Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M122.79%2C91.73l-7.91-9.35%2C4-3.86%2C7.67%2C8.75%2C3.23-3.62%2C3.08%2C2.75-3.2%2C4%2C9.3%2C9.06-4.17%2C4.69-8.68-8.7-2.31%2C3.67-4-3.91Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M140.41%2C89.1a32.18%2C32.18%2C0%2C0%2C0%2C3.42-1.91%2C8.75%2C8.75%2C0%2C0%2C0%2C1.75-1.31c.57-.51.75-1%2C.52-1.45a2%2C2%2C0%2C0%2C0-2-1l-2.39.55a8.09%2C8.09%2C0%2C0%2C1-6.09-.67%2C5.88%2C5.88%2C0%2C0%2C1-3.22-5A8.58%2C8.58%2C0%2C0%2C1%2C134%2C73.61a11.13%2C11.13%2C0%2C0%2C1%2C3.24-3.41%2C4.53%2C4.53%2C0%2C0%2C1%2C4.71-.58%2C6.71%2C6.71%2C0%2C0%2C1%2C2.57%2C2.48L140.87%2C76q-2.35-2.3-3.68-.8c-.76.85-.54%2C1.88.68%2C3.09q1.08%2C1.16%2C4%2C.48a20.29%2C20.29%2C0%2C0%2C1%2C4.41-.66A5.92%2C5.92%2C0%2C0%2C1%2C151.66%2C81c.67%2C1.11.61%2C2.53-.16%2C4.25a12.63%2C12.63%2C0%2C0%2C1-2.23%2C3.36%2C39.9%2C39.9%2C0%2C0%2C1-5.78%2C5Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M146.39%2C61.19q2.16%2C2.7%2C4.13%2C5.22%2C4.26%2C5.5%2C5.88%2C5.62a1.94%2C1.94%2C0%2C0%2C0%2C1.66-1c.42-.9.33-2.37-.26-4.43l-3.55-3.93-5.18-5.77%2C3.43-3.62q4.29%2C4.59%2C7.3%2C7.66%2C3%2C2.85%2C7.58%2C7.14l-3.78%2C4.45-1.72-1.72a9.94%2C9.94%2C0%2C0%2C1-1%2C4.81q-1.83%2C3.14-5%2C2.41c-1.36-.33-3.05-1.51-5.05-3.55Q149.39%2C73%2C146%2C69.09l-4-4.72Z%22%2F%3E%3C%2Fg%3E%3Cg%20class%3D%22cls-2%22%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M63.56%2C343.55l3.73%2C3.52-4.44%2C5.4L80.37%2C369l-4%2C4.67-17.3-16.38-3.87%2C6.49-4.91-4.77Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M77.7%2C340.11q4-4.87%2C9.26-2.25a18%2C18%2C0%2C0%2C1%2C5%2C4.06%2C13.65%2C13.65%2C0%2C0%2C1%2C2.93%2C5.28%2C8.67%2C8.67%2C0%2C0%2C1-.47%2C5.89%2C11.94%2C11.94%2C0%2C0%2C1-2.81%2C3.8%2C7.17%2C7.17%2C0%2C0%2C1-5.64%2C2q-3.15-.33-6.81-4.16A13.18%2C13.18%2C0%2C0%2C1%2C75.37%2C347%2C9%2C9%2C0%2C0%2C1%2C77.7%2C340.11Zm11.87%2C13.26c1.17-.74%2C1.43-2%2C.8-3.69a13.68%2C13.68%2C0%2C0%2C0-3-4%2C31.18%2C31.18%2C0%2C0%2C0-3.19-2.84%2C2.7%2C2.7%2C0%2C0%2C0-2.66-.66%2C2.61%2C2.61%2C0%2C0%2C0-1.63%2C3.33q.81%2C3.58%2C4.82%2C6.59C86.79%2C353.69%2C88.4%2C354.11%2C89.57%2C353.37Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M104.08%2C342.23l-3.89%2C4.37L85.86%2C331l3.92-3.76%2C1.61%2C1.62a10.18%2C10.18%2C0%2C0%2C1%2C2.17-6.28c1.33-1.49%2C2.59-2.27%2C3.8-2.34a5.68%2C5.68%2C0%2C0%2C1%2C3.38.72%2C24.88%2C24.88%2C0%2C0%2C1%2C3.27%2C2.53l9.18%2C8.57-4.37%2C4.89-5-5.26q-2.46-2.58-4.28-4.2c-1.27-1.14-2.2-1.52-2.79-1.15a2.6%2C2.6%2C0%2C0%2C0-1.1%2C1.88c-.15%2C1-.24%2C1.76-.28%2C2.24a9.56%2C9.56%2C0%2C0%2C0%2C.28%2C3.11%2C38.45%2C38.45%2C0%2C0%2C0%2C3.45%2C3.84Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M119.27%2C325.41l-4.66%2C5-21-21.21%2C4.72-4%2C9.24%2C9.77-1-14.28%2C5.68.48.92%2C10.75%2C12.53%2C2-.78%2C5.8c-2.31-.54-4.7-1-7.15-1.41q-4-.46-7.63-1.07Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M122.7%2C298.85l-4.71.58a15.81%2C15.81%2C0%2C0%2C1%2C.55-4.48%2C8%2C8%2C0%2C0%2C1%2C2.32-3.46%2C5.94%2C5.94%2C0%2C0%2C1%2C4.77-1.49%2C7.84%2C7.84%2C0%2C0%2C1%2C2.89%2C1.25%2C27%2C27%2C0%2C0%2C1%2C3.82%2C3.21l7.39%2C7.36-4%2C5-1.35-2.35a15.74%2C15.74%2C0%2C0%2C1-1%2C5.21%2C4.68%2C4.68%2C0%2C0%2C1-4.4%2C2.57%2C6.65%2C6.65%2C0%2C0%2C1-4.26-2.08A8.25%2C8.25%2C0%2C0%2C1%2C122.1%2C306a7.19%2C7.19%2C0%2C0%2C1%2C.86-6.11%2C7.68%2C7.68%2C0%2C0%2C1%2C2.11-1.94%2C6.77%2C6.77%2C0%2C0%2C1%2C2.78-.76%2C10.65%2C10.65%2C0%2C0%2C0-2.78-2.67c-.75-.3-1.37%2C0-1.86%2C1A9.21%2C9.21%2C0%2C0%2C0%2C122.7%2C298.85Zm8%2C6.52a5.83%2C5.83%2C0%2C0%2C0%2C.88-2.27c.37-1.71-.09-2.76-1.4-3.16a2.26%2C2.26%2C0%2C0%2C0-2.18.73%2C4.47%2C4.47%2C0%2C0%2C0-.71%2C1.66%2C3.41%2C3.41%2C0%2C0%2C0%2C.59%2C3.2%2C1.72%2C1.72%2C0%2C0%2C0%2C1.65.71A1.77%2C1.77%2C0%2C0%2C0%2C130.65%2C305.37Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M131.71%2C285.11l-7.91-9.34%2C4-3.87%2C7.67%2C8.75%2C3.23-3.62%2C3.08%2C2.75-3.2%2C4%2C9.31%2C9.06-4.18%2C4.68-8.68-8.69-2.31%2C3.66-4-3.91Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M149.33%2C282.48a32.29%2C32.29%2C0%2C0%2C0%2C3.43-1.91%2C8.37%2C8.37%2C0%2C0%2C0%2C1.74-1.31c.58-.5.75-1%2C.52-1.44a2%2C2%2C0%2C0%2C0-2-1l-2.4.54a8.14%2C8.14%2C0%2C0%2C1-6.09-.66%2C5.9%2C5.9%2C0%2C0%2C1-3.22-5%2C8.53%2C8.53%2C0%2C0%2C1%2C1.55-4.73%2C11.05%2C11.05%2C0%2C0%2C1%2C3.24-3.42%2C4.51%2C4.51%2C0%2C0%2C1%2C4.71-.57%2C6.71%2C6.71%2C0%2C0%2C1%2C2.57%2C2.48l-3.62%2C3.84q-2.35-2.28-3.68-.8-1.14%2C1.28.68%2C3.09c.72.77%2C2%2C.93%2C4%2C.48a20.62%2C20.62%2C0%2C0%2C1%2C4.4-.65%2C5.89%2C5.89%2C0%2C0%2C1%2C5.42%2C2.92q1%2C1.65-.16%2C4.25a13%2C13%2C0%2C0%2C1-2.23%2C3.36%2C39.34%2C39.34%2C0%2C0%2C1-5.78%2C5Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M155.31%2C254.57c1.45%2C1.81%2C2.82%2C3.55%2C4.13%2C5.22%2C2.84%2C3.67%2C4.8%2C5.55%2C5.88%2C5.62a1.92%2C1.92%2C0%2C0%2C0%2C1.66-1c.42-.9.33-2.38-.26-4.43L163.17%2C256%2C158%2C250.28l3.43-3.63q4.31%2C4.6%2C7.3%2C7.66%2C3%2C2.87%2C7.58%2C7.14l-3.78%2C4.46-1.72-1.72a10.06%2C10.06%2C0%2C0%2C1-1%2C4.8c-1.23%2C2.09-2.9%2C2.9-5%2C2.41-1.36-.32-3.05-1.51-5.05-3.55-.93-1-2.51-2.75-4.75-5.38-1.37-1.6-2.71-3.18-4-4.72Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M247.77%2C137l3.74%2C3.52-4.44%2C5.4%2C17.51%2C16.57-4%2C4.67-17.3-16.38-3.87%2C6.49-4.92-4.77Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M261.92%2C133.51c2.64-3.25%2C5.72-4%2C9.26-2.25a18.28%2C18.28%2C0%2C0%2C1%2C5%2C4.06%2C13.61%2C13.61%2C0%2C0%2C1%2C2.93%2C5.29%2C8.65%2C8.65%2C0%2C0%2C1-.48%2C5.88%2C11.8%2C11.8%2C0%2C0%2C1-2.81%2C3.8%2C7.15%2C7.15%2C0%2C0%2C1-5.64%2C2c-2.1-.22-4.36-1.6-6.8-4.16a13.26%2C13.26%2C0%2C0%2C1-3.78-7.76A9%2C9%2C0%2C0%2C1%2C261.92%2C133.51Zm11.86%2C13.26q1.75-1.11.8-3.68a13.47%2C13.47%2C0%2C0%2C0-2.95-4%2C32.28%2C32.28%2C0%2C0%2C0-3.19-2.84%2C2.72%2C2.72%2C0%2C0%2C0-2.67-.66%2C2.61%2C2.61%2C0%2C0%2C0-1.62%2C3.33c.54%2C2.39%2C2.14%2C4.59%2C4.82%2C6.59C271%2C147.09%2C272.61%2C147.51%2C273.78%2C146.77Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M288.29%2C135.64%2C284.4%2C140l-14.32-15.64L274%2C120.6l1.61%2C1.62a10.24%2C10.24%2C0%2C0%2C1%2C2.16-6.28q2-2.23%2C3.81-2.34a5.72%2C5.72%2C0%2C0%2C1%2C3.37.72%2C23.62%2C23.62%2C0%2C0%2C1%2C3.28%2C2.54l9.17%2C8.56L293%2C130.31%2C288%2C125.05c-1.65-1.72-3.07-3.12-4.28-4.2s-2.21-1.52-2.79-1.15a2.63%2C2.63%2C0%2C0%2C0-1.11%2C1.88c-.14%2C1-.23%2C1.76-.27%2C2.24a9.3%2C9.3%2C0%2C0%2C0%2C.28%2C3.11%2C36.12%2C36.12%2C0%2C0%2C0%2C3.45%2C3.84Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M303.49%2C118.81l-4.66%2C5-21-21.21%2C4.72-4%2C9.24%2C9.77-1-14.28%2C5.68.48.92%2C10.75%2C12.54%2C2-.78%2C5.8c-2.32-.54-4.7-1-7.15-1.4-2.64-.32-5.19-.68-7.63-1.08Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M306.92%2C92.26l-4.72.57a16.61%2C16.61%2C0%2C0%2C1%2C.55-4.48%2C8%2C8%2C0%2C0%2C1%2C2.33-3.46%2C5.92%2C5.92%2C0%2C0%2C1%2C4.76-1.49%2C8%2C8%2C0%2C0%2C1%2C2.9%2C1.25%2C27.78%2C27.78%2C0%2C0%2C1%2C3.82%2C3.22L324%2C95.22l-4.06%2C5-1.34-2.35a15.94%2C15.94%2C0%2C0%2C1-1%2C5.21%2C4.67%2C4.67%2C0%2C0%2C1-4.4%2C2.57%2C6.65%2C6.65%2C0%2C0%2C1-4.25-2.08%2C8.23%2C8.23%2C0%2C0%2C1-2.57-4.19%2C7.26%2C7.26%2C0%2C0%2C1%2C.86-6.11%2C7.73%2C7.73%2C0%2C0%2C1%2C2.12-1.94%2C6.77%2C6.77%2C0%2C0%2C1%2C2.78-.76%2C11%2C11%2C0%2C0%2C0-2.78-2.67c-.76-.29-1.38%2C0-1.86%2C1A9.23%2C9.23%2C0%2C0%2C0%2C306.92%2C92.26Zm7.94%2C6.51a5.54%2C5.54%2C0%2C0%2C0%2C.88-2.27c.37-1.71-.09-2.76-1.39-3.16a2.24%2C2.24%2C0%2C0%2C0-2.18.74%2C4.33%2C4.33%2C0%2C0%2C0-.71%2C1.65%2C3.4%2C3.4%2C0%2C0%2C0%2C.58%2C3.2%2C1.74%2C1.74%2C0%2C0%2C0%2C1.66.71A1.76%2C1.76%2C0%2C0%2C0%2C314.86%2C98.77Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M315.92%2C78.51%2C308%2C69.17l4-3.87%2C7.67%2C8.75%2C3.22-3.62L326%2C73.19l-3.2%2C4%2C9.3%2C9.06L328%2C91l-8.68-8.69L317%2C85.92%2C313%2C82Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M333.55%2C75.89A35.35%2C35.35%2C0%2C0%2C0%2C337%2C74a7.79%2C7.79%2C0%2C0%2C0%2C1.74-1.31c.58-.5.76-1%2C.53-1.44a2%2C2%2C0%2C0%2C0-2-1l-2.39.54a8.16%2C8.16%2C0%2C0%2C1-6.1-.66%2C5.87%2C5.87%2C0%2C0%2C1-3.21-5%2C8.45%2C8.45%2C0%2C0%2C1%2C1.55-4.73A11.25%2C11.25%2C0%2C0%2C1%2C330.34%2C57a4.52%2C4.52%2C0%2C0%2C1%2C4.72-.57%2C6.62%2C6.62%2C0%2C0%2C1%2C2.56%2C2.48L334%2C62.73q-2.36-2.28-3.69-.8c-.75.85-.53%2C1.88.69%2C3.09q1.07%2C1.16%2C4%2C.48a20.78%2C20.78%2C0%2C0%2C1%2C4.41-.65%2C5.9%2C5.9%2C0%2C0%2C1%2C5.42%2C2.92c.67%2C1.1.61%2C2.52-.16%2C4.25a13%2C13%2C0%2C0%2C1-2.23%2C3.36%2C39.88%2C39.88%2C0%2C0%2C1-5.78%2C5Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M339.52%2C48q2.18%2C2.72%2C4.14%2C5.22c2.84%2C3.67%2C4.79%2C5.55%2C5.88%2C5.62a1.91%2C1.91%2C0%2C0%2C0%2C1.65-1c.42-.9.34-2.38-.25-4.43l-3.56-3.94-5.17-5.76%2C3.42-3.63q4.31%2C4.61%2C7.31%2C7.66%2C3%2C2.86%2C7.58%2C7.14l-3.79%2C4.46L355%2C57.59a9.9%2C9.9%2C0%2C0%2C1-1%2C4.8c-1.23%2C2.09-2.9%2C2.9-5%2C2.41-1.37-.32-3.05-1.51-5.05-3.55-.93-1-2.52-2.75-4.75-5.38-1.37-1.6-2.71-3.18-4-4.72Z%22%2F%3E%3C%2Fg%3E%3Cg%20class%3D%22cls-2%22%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M256.13%2C329.82l3.73%2C3.53-4.44%2C5.4%2C17.52%2C16.57L269%2C360l-17.3-16.38-3.87%2C6.48-4.91-4.76Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M270.27%2C326.39q4-4.87%2C9.26-2.25a17.81%2C17.81%2C0%2C0%2C1%2C5%2C4.06%2C13.65%2C13.65%2C0%2C0%2C1%2C2.93%2C5.28%2C8.67%2C8.67%2C0%2C0%2C1-.47%2C5.89%2C11.79%2C11.79%2C0%2C0%2C1-2.81%2C3.79%2C7.1%2C7.1%2C0%2C0%2C1-5.64%2C2c-2.1-.21-4.37-1.6-6.81-4.15a13.18%2C13.18%2C0%2C0%2C1-3.77-7.76A9%2C9%2C0%2C0%2C1%2C270.27%2C326.39Zm11.87%2C13.25c1.17-.73%2C1.43-2%2C.8-3.68a13.68%2C13.68%2C0%2C0%2C0-3-4%2C32.58%2C32.58%2C0%2C0%2C0-3.19-2.85%2C2.72%2C2.72%2C0%2C0%2C0-2.66-.65%2C2.61%2C2.61%2C0%2C0%2C0-1.63%2C3.32c.54%2C2.4%2C2.15%2C4.59%2C4.82%2C6.6C279.36%2C340%2C281%2C340.39%2C282.14%2C339.64Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M296.65%2C328.51l-3.89%2C4.37-14.33-15.64%2C3.92-3.76L284%2C315.1a10.18%2C10.18%2C0%2C0%2C1%2C2.17-6.28c1.33-1.49%2C2.59-2.27%2C3.8-2.34a5.75%2C5.75%2C0%2C0%2C1%2C3.38.71%2C25.09%2C25.09%2C0%2C0%2C1%2C3.27%2C2.54l9.18%2C8.57-4.37%2C4.89-5.05-5.26q-2.46-2.6-4.28-4.2c-1.27-1.14-2.2-1.52-2.79-1.15a2.6%2C2.6%2C0%2C0%2C0-1.1%2C1.88c-.15%2C1-.24%2C1.76-.28%2C2.23a9.6%2C9.6%2C0%2C0%2C0%2C.28%2C3.12%2C39.59%2C39.59%2C0%2C0%2C0%2C3.45%2C3.84Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M311.84%2C311.69l-4.66%2C5-21-21.22%2C4.72-4%2C9.24%2C9.77-1-14.28%2C5.69.48.92%2C10.75%2C12.53%2C2-.78%2C5.8c-2.31-.54-4.7-1-7.15-1.41-2.64-.32-5.18-.67-7.63-1.07Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M315.27%2C285.13l-4.71.58a15.81%2C15.81%2C0%2C0%2C1%2C.55-4.48%2C8.06%2C8.06%2C0%2C0%2C1%2C2.32-3.47%2C6%2C6%2C0%2C0%2C1%2C4.77-1.48%2C7.84%2C7.84%2C0%2C0%2C1%2C2.89%2C1.25%2C26.38%2C26.38%2C0%2C0%2C1%2C3.82%2C3.21l7.39%2C7.36-4.05%2C5-1.35-2.34a15.74%2C15.74%2C0%2C0%2C1-1%2C5.21%2C4.68%2C4.68%2C0%2C0%2C1-4.4%2C2.57c-1.28%2C0-2.7-.69-4.26-2.08a8.25%2C8.25%2C0%2C0%2C1-2.56-4.19%2C7.19%2C7.19%2C0%2C0%2C1%2C.86-6.11%2C7.68%2C7.68%2C0%2C0%2C1%2C2.11-1.94%2C6.75%2C6.75%2C0%2C0%2C1%2C2.78-.77%2C10.55%2C10.55%2C0%2C0%2C0-2.78-2.66c-.75-.3-1.37%2C0-1.86%2C1A9.21%2C9.21%2C0%2C0%2C0%2C315.27%2C285.13Zm8%2C6.52a5.82%2C5.82%2C0%2C0%2C0%2C.88-2.28c.37-1.7-.09-2.75-1.4-3.15a2.24%2C2.24%2C0%2C0%2C0-2.18.73%2C4.47%2C4.47%2C0%2C0%2C0-.71%2C1.66%2C3.41%2C3.41%2C0%2C0%2C0%2C.59%2C3.2%2C1.74%2C1.74%2C0%2C0%2C0%2C1.65.71A1.77%2C1.77%2C0%2C0%2C0%2C323.22%2C291.65Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M324.28%2C271.39%2C316.37%2C262l4-3.86%2C7.67%2C8.75%2C3.23-3.62%2C3.08%2C2.75-3.2%2C4%2C9.31%2C9.06-4.18%2C4.69-8.68-8.7-2.31%2C3.67-4-3.91Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M341.9%2C268.76a32.29%2C32.29%2C0%2C0%2C0%2C3.43-1.91%2C8.37%2C8.37%2C0%2C0%2C0%2C1.74-1.31c.58-.51.75-1%2C.52-1.45a2%2C2%2C0%2C0%2C0-2-1l-2.4.54a8.14%2C8.14%2C0%2C0%2C1-6.09-.66%2C5.91%2C5.91%2C0%2C0%2C1-3.22-5%2C8.53%2C8.53%2C0%2C0%2C1%2C1.55-4.73%2C11.05%2C11.05%2C0%2C0%2C1%2C3.24-3.42%2C4.51%2C4.51%2C0%2C0%2C1%2C4.71-.57%2C6.63%2C6.63%2C0%2C0%2C1%2C2.57%2C2.48l-3.62%2C3.84c-1.57-1.53-2.8-1.79-3.68-.8s-.53%2C1.88.68%2C3.09c.72.77%2C2%2C.93%2C4%2C.48a20.78%2C20.78%2C0%2C0%2C1%2C4.4-.66%2C5.92%2C5.92%2C0%2C0%2C1%2C5.42%2C2.93c.67%2C1.1.61%2C2.52-.16%2C4.25a13%2C13%2C0%2C0%2C1-2.23%2C3.36%2C40.59%2C40.59%2C0%2C0%2C1-5.78%2C5Z%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M347.88%2C240.85c1.45%2C1.8%2C2.82%2C3.54%2C4.13%2C5.22%2C2.84%2C3.67%2C4.8%2C5.55%2C5.88%2C5.62a1.94%2C1.94%2C0%2C0%2C0%2C1.66-1c.42-.9.33-2.38-.26-4.43l-3.55-3.94-5.18-5.76%2C3.43-3.63q4.31%2C4.6%2C7.3%2C7.66%2C3%2C2.85%2C7.58%2C7.14l-3.78%2C4.46-1.72-1.72a10.06%2C10.06%2C0%2C0%2C1-1%2C4.8q-1.84%2C3.14-5%2C2.41c-1.36-.32-3.05-1.51-5.05-3.55-.93-.95-2.51-2.75-4.75-5.38l-4-4.72Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  background-size: 12.5rem 12.5rem;
+  cursor: url('data:image/gif;base64,R0lGODlhEAAOANU/AD47O1lXVxUREUZDQ62rq+Dg4Pr6+hcUFFxaWvHx8bKxsfv7+0I/P52cnBIODlBNTUhFRU5LS5COjkA9PfDv76Wjo+7t7dDPz7m4uG5ra9HQ0J6dnZOSkvLy8tTU1ExJSWRhYfj4+MLBwbSzs7i3t1NQUKmnp5qZmYeFhYmHh46MjDIuLtnZ2aOhoSIfH6akpNPT04B+fp+ensC/v+Tj4w0JCWtoaKyqqn99ffn5+fPz8+/u7tXV1crJyQgEBP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEVEMkJCREEzMEYyMTFFOTgyQURDNkNEQTU2OUY4NjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEVEMkJCREIzMEYyMTFFOTgyQURDNkNEQTU2OUY4NjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4RUQyQkJEODMwRjIxMUU5ODJBREM2Q0RBNTY5Rjg2OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4RUQyQkJEOTMwRjIxMUU5ODJBREM2Q0RBNTY5Rjg2OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAD8ALAAAAAAQAA4AAAaCwJ/wNwJALj/NJjRs0nzQR0fggyyaQhLUN2ltC9hfbhvAbBNNwumXgop+UMTPlknEoIxFSSJUgHYDUANUUCY/BAADPT8NWw4MWw0wWz4WL1sqPA5QBRGUAzoHPgFCLB8cN5RQIB4EWDOqWwpYBjWxq1gUt1AyYRUuBxEoOA8rCAZDQQA7'), pointer;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  padding: .3rem;
+  font-size: .8rem;
+}
+
+main {
+  background: white;
+  padding: 1rem;
+  max-width: 640px;
+  margin: 1rem auto;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 0 0 rgba(100, 100, 100, 1) inset;
+}
+
+h1 {
+  color: olive;
+  font-style: oblique;
+  text-shadow: 2px 5px 1px #ccc;
+}
+
+h2 {
+  color: orange;
+  background: -webkit-linear-gradient(90deg, blue, orange, fuchsia);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form textarea {
+  width: 100%;
+  border: solid 1px gray;
+  box-shadow: 2px 2px 0 0 rgba(100, 100, 100, 1) inset;
+  margin: 3rem 0 .25rem;
+}
+
+button {
+  border: solid 1px black;
+  box-shadow: -2px -2px 0 grey inset;
+}
+
+button:active {
+  box-shadow: 2px 2px 0 grey inset;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.counter p {
+  font-style: oblique;
+}
+
+.counter span {
+  display: inline-block;
+  background: black;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 0 0 rgba(100, 100, 100, 1) inset;
+  color: yellow;
+  font-weight: bold;
+  padding: .5rem;
+  margin: 0 .25rem;
+}
+
+.marquee {
+  padding: 0.5rem 0;
+  overflow: hidden;
+  background-color: black;
+  color: red;
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+.marquee p:after {
+  content: "";
+  white-space: nowrap;
+  padding-right: 7.5rem;
+}
+
+.marquee p {
+  margin: 0;
+  padding-left: 75rem;
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translate(0%);
+  }
+  99%,
+  to {
+    -webkit-transform: translate(-100%);
+  }
+}
+
+@-moz-keyframes marquee {
+  from {
+    -moz-transform: translate(0%);
+  }
+  99%,
+  to {
+    -moz-transform: translate(-100%);
+  }
+}
+
+@-ms-keyframes marquee {
+  from {
+    -ms-transform: translate(0%);
+  }
+  99%,
+  to {
+    -ms-transform: translate(-100%);
+  }
+}
+
+@-o-keyframes marquee {
+  from {
+    -o-transform: translate(0%);
+  }
+  99%,
+  to {
+    -o-transform: translate(-100%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate(0%);
+  }
+  99%,
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.blink {
+  animation: 1.5s linear infinite blink_effect;
+  color: blue;
+}
+
+.chat {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 .25rem;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 0 0 rgba(100, 100, 100, 1) inset;
+}
+
+.chat>li {
+  border-bottom: solid 3px #ccc;
+  padding: .5rem;
+  line-height: 1.5;
+}
+
+.chat-meta {
+  color: green;
+  font-weight: bold;
+}
+
+.chat-meta span {
+  font-size: .75rem;
+  font-weight: normal;
+}
+
+.chat-meta .date::before {
+  content: "--";
+}
+
+.chat-meta .new {
+  animation: 1.5s linear infinite blink_effect;
+  background: red;
+  color: white;
+  padding: .1rem .25rem;
+}
+
+.chat-comment {
+  white-space: pre-wrap;
+  line-height: 1.2;
+}
+
+.notify {
+  color: red;
+  font-style: oblique;
+}
+
+.secret {
+  margin: 0;
+  padding: 0;
+}
+
+.secret li {
+  display: inline-block;
+}
+
+.secret a {
+  color: white;
+}
+
+.emojis {
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.emojis li {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 0.4rem 0.4rem 0;
+}
+
+.emojis button {
+  background: inherit;
+  border: 0;
+  box-shadow: none;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- https://google.github.io/styleguide/htmlcssguide.html -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+<link rel="stylesheet" href="/style.css">
+<title>とんかつカレーチャット</title>
+<div id="app">
+	<header>
+		<h1>🍛とんかつカレーチャット🍛</h1>
+		<template v-if="isAuthenticated">
+			<button @click="signOut">ログアウト</button> ({{ user.email }})
+  <div class="counter">
+    <p>ようこそ！あなたは<span v-if="accessCount">{{ accessCount }}</span>人目の訪問者です<br>※キリ番踏み逃げ禁止！</p>
+    <div class="marquee">
+      <p>★★Sorry, This Page is Japanese Only！★★</p>
+    </div>
+    <img @click="alert('にゃーー！')" class="gif-cat" src="data:image/gif;base64,R0lGODlhMgBLANUAAKmhkeXMnyMfHYl9b5mNfSER+P374ktBNwn9E/cC/cqeZ/Tr2QXv7JFaMnBmWmTo9VdNQ/v6AZba535xYzgxK824l2RZTl78AdDOygKV+e3ewLsE8/sKVAH9gvxHAf0CvjRFSad9Q+FNSOyO//i3AnOjn0/KEOXv8yT/P/5p68gXET1tJhcrmA2bTf9imJkQpaYtI8DB/xS6Hf/O3dX/yw+4wb35Aqr/r0waeLsRTZtx/0d2doH/SEzK1W7/tP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RThDRTlFQUQzMEQzMTFFOUJDMEZBOEU1QkExNDQ2OTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RThDRTlFQUUzMEQzMTFFOUJDMEZBOEU1QkExNDQ2OTUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFOENFOUVBQjMwRDMxMUU5QkMwRkE4RTVCQTE0NDY5NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1w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" alt="ねこ">
+  </div>
+  <div class="blink">↑↑他人のねこ</div>
+  </template>
+  <template v-else>
+    <button @click="signInGoogle">グーグルログイン</button>
+    <!--<button @click="signInTwitter">ツイッターログイン</button>-->
+  </template>
+</header>
+<main>
+  <template v-if="dish && isAuthenticated">
+    <h2 v-if="dish.title">
+      {{ dish.title }} <span>{{ timestampFormat(dish.timestamp) }}</span>
+    </h2>
+    <h2 v-else>名前のないお皿 </h2>
+		<p v-if="dish.description">{{ dish.description }}</p>
+    <ul v-if="notifyMessages.length" class="notify">
+      <li v-for="(item, index) in notifyMessages" :class="item.type" index="index">{{ item.message }}</li>
+    </ul>
+
+		<button @click="loadOldMessageList">過去ログ読み込み</button>
+		<ul v-if="oldMessageList.length" class="chat">
+      <li v-for="(message, index) in oldMessageList"
+        :key="message.id"
+        :index="index"
+        >
+				<div class="chat-meta":style="nameColor(message.data.uid, message.data.timestamp)" :data-display-name="message.data.displayName">
+					<span class="hash">{{ message.id.substr(0,3) }}</span>
+					{{ nanasiName(message.data.uid, message.data.timestamp) }}
+					<span>{{ timestampFormat(message.data.timestamp) }}</span>
+					<span>ID:{{ message.data.uid }}</span>
+				</div>
+        <div class="chat-comment">{{ message.data.content }}</div>
+      </li>
+    </ul>
+
+    <ul v-if="messageList.length" class="chat">
+      <li v-for="(message, index) in messageList"
+        :key="message.id"
+        :index="index"
+        >
+				<div class="chat-meta" :style="nameColor(message.data.uid, message.data.timestamp)" :data-display-name="message.data.displayName">
+					<span v-if="isNew(message.data.timestamp)" class="new">New!</span>
+					<span class="hash">{{ message.id.substr(0,3) }}</span>
+					{{ nanasiName(message.data.uid, message.data.timestamp) }}
+					<span class="date">{{ timestampFormat(message.data.timestamp) }}</span>
+					<span class="uid">ID:{{ message.data.uid }}</span>
+
+				</div>
+				<div class="chat-comment">{{ message.data.content }}</div>
+      </li>
+    </ul>
+
+		<form v-on:submit.prevent id="message-form">
+			<textarea v-model="message" rows="4"></textarea>
+			<button @click="addMessage">書き込み</button>
+			<button @click="emojiListVisible = !emojiListVisible">絵文字</button>
+			<button :disabled="!message.length"@click="message=''">リセット</button>
+			<ul class="emojis" v-show="emojiListVisible">
+				<li v-for="(emoji, index) in emojiList" :index="index" :key="index">
+					<button @click="insertToMessage(emoji)">{{ emoji }}</button>
+				</li>
+			</ul>
+		</form>
+
+		<ul class="secret">
+			<li><a href="https://uyamazak.hatenablog.com/">管理人ブログ</a></li>
+			<li><a href="https://untitled-txt.hatenablog.com/">デザイナーブログ</a></li>
+		</ul>
+
+  </template>
+	<template v-else-if="!isAuthenticated">
+		ログインしてね
+	</template>
+  <template v-else-if="dishLoaded === true">
+    お皿 {{dishId}} が見つかりません
+  </template>
+</main>
+<footer>
+	<p>利用規約←工事中</p>
+	<p>© 2019 project tonkatsu-curry. All rights reserved.<p>
+</footer>
+<!--<button @click="createCounter">createCounter()</button>-->
+</div>
+
+<!-- update the version number as needed -->
+<script defer src="/__/firebase/5.8.3/firebase-app.js"></script>
+<!-- include only the Firebase features as you need -->
+<script defer src="/__/firebase/5.8.3/firebase-auth.js"></script>
+<script defer src="/__/firebase/5.8.3/firebase-firestore.js"></script>
+<!--
+<script defer src="/__/firebase/5.8.3/firebase-messaging.js"></script>
+<script defer src="/__/firebase/5.8.3/firebase-storage.js"></script>
+-->
+<!-- initialize the SDK after all desired features are loaded -->
+<script defer src="/__/firebase/init.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script defer src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+
+<script defer src="/app.js"></script>

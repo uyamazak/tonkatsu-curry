@@ -1,0 +1,22 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin;
+    }
+    match /chat/{dishId}{
+    	allow get: if request.auth.uid != null;
+      allow list: if isAdmin();
+    	match /messages/{messageId} {
+      	allow write: if request.auth.uid == request.resource.data.uid 
+          && exists(/databases/$(database)/documents/chat/$(dishId));
+      	allow read: if request.auth.uid != null;
+    	}
+    }
+    match /counter/{document=**} {
+      allow read, write: if isAdmin();
+    }
+    match /counter/access/shards/{shardId} {
+      allow read, update: if request.auth.uid != null;
+    }
+  }
+}
