@@ -1,5 +1,9 @@
-# 🍛とんかつカレーチャット設置の手引き
-全部GCP Cloud Shell上で開発してます。
+# 🍛とんかつカレーBBS 設置の手引き
+とんかつカレーBBSはFirebaseとVue.jsを使った最新の実用性のないBBSです。
+
+Google Cloud Console上だけで開発、デプロイができます。
+
+閲覧、書き込みにはGoogleログインが必要なため完全な匿名ではありません。
 
 ## インストール 
 Firebaseプロジェクト作ってCloud Shellで
@@ -8,7 +12,7 @@ Firebaseプロジェクト作ってCloud Shellで
 
 する。
 
-`git clone`
+`git clone {URL}`
 
 する。できたディレクトリ内のfunctionsに入り
 
@@ -18,13 +22,20 @@ Firebaseプロジェクト作ってCloud Shellで
 
 する
 
+
+## デプロイ
+
 `firebase deploy`
-する
+
+プロジェクトを指定されてないエラーが出るときは追加しておく
+
+`firebase use --add {ProjectID}`
+
 
 ## お皿（スレッド）の作り方
-Fires0toreで下記ドキュメントを作る
+Firebaseコンソールを開き、Firestore (Database)で下記ドキュメントを任意のdishIDで作る
 
-`/dishes/{ID}`
+`/dishes/{dishID}`
 
 ドキュメントに下記のデータを追加する
 
@@ -32,6 +43,10 @@ Fires0toreで下記ドキュメントを作る
 - フィールド: description, タイプ: string, 値: 説明文
 - フィールド: timestamp, タイプ: timestamp, 値: 作成日時
 
+下記URLでアクセスできる
+`
+https://{projectID}.firebaseapp.com/~{dishID}/
+`
 
 ## 管理者の追加
  + Firebaseコンソールを開く
@@ -43,3 +58,9 @@ Fires0toreで下記ドキュメントを作る
 作成したドキュメントに下記データを追加
 
 - フィールド: isAdmin, タイプ: boolean, 値: true
+
+## トラブルシューティング
+
+### ストレージに書き込めない
+Firebase Storageはプロジェクトで初めて使うとき初期化が必要な模様。
+FirebaseコンソールでStorageを開き「スタートガイド」をクリックする
