@@ -384,7 +384,7 @@ const app = new Vue({
         console.log('ext not found')
         return
       }
-      const ref = this.uploadImageRef(ext)ｔ
+      const ref = this.uploadImageRef(ext)
       ref.put(file).then(async (snapshot) => {
         console.log(snapshot)
         this.uploadedImageFullPath = snapshot.metadata.fullPath
