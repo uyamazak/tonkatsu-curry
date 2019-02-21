@@ -50,10 +50,11 @@
           <span v-if="message.data.imagePath">{{ message.data.imagePath }}</span>
 				</div>
         <div class="chat-comment">{{ message.data.content }}</div>
+        <div v-if="message.data.imageUrl" class="chat-image"><img :src="message.data.imageUrl" alt=""></div>
       </li>
     </ul>
 
-    <ul v-if="messageList.length" class="chat">
+    <ul v-if="messageList.length" class="chat" id="message-ul">
       <li v-for="(message, index) in messageList"
         :key="message.id"
         :index="index"
@@ -64,10 +65,13 @@
 					{{ nanasiName(message.data.uid, message.data.timestamp) }}
 					<span class="date">{{ timestampFormat(message.data.timestamp) }}</span>
 					<span class="uid">ID:{{ message.data.uid }}</span>
-      
 				</div>
 				<div class="chat-comment">{{ message.data.content }}</div>
-        <div v-if="message.data.imageUrl" class="chat-image"><img :src="message.data.imageUrl" alt=""></div>
+        <div v-if="message.data.imageUrl" class="chat-image">
+          <a target="_blank" :href="message.data.imageUrl">
+            <img :src="message.data.imageUrl" @load="scrollToBottom" alt="">
+          </a>
+        </div>
       </li>
     </ul>
 
@@ -80,7 +84,7 @@
       <div>
         画像:<input accept="image/*" ref="imgFile" @change="uploadImage" type="file">
         <img v-if="uploadedImageUrl" :src="uploadedImageUrl">
-        <button v-if="uploadedImageUrl" @click="resetUploadedImage">削除</button>
+        <button v-if="uploadedImageUrl" @click="deleteUploadedImage">削除</button>
       </div>
 
 			<ul class="emojis" v-show="emojiListVisible">

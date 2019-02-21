@@ -213,8 +213,8 @@ pre {
   line-height: 1.2;
 }
 .chat-image img{
-  max-width:200px;
-  height:auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .notify {

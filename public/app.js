@@ -322,9 +322,11 @@ const app = new Vue({
       if (!this.lastMessage && snapshot.docs.length) {
         this.lastMessage = snapshot.docs[snapshot.docs.length - 1]
       }
-
+      this.scrollToBottom()
+    },
+    scrollToBottom: function() {
       this.$nextTick(() => {
-        window.scrollTo(0, document.getElementById('message-form').getBoundingClientRect().y)
+        window.scrollTo(0, document.querySelector('#message-ul li:last-child').offsetTop)
       })
     },
     counter: function() {
@@ -382,7 +384,6 @@ const app = new Vue({
         console.log('ext not found')
         return
       }
-      console.log('ext:', ext)
       const ref = this.uploadImageRef(ext)
       console.log(ref)
       ref.put(file).then(async (snapshot) => {
@@ -395,6 +396,18 @@ const app = new Vue({
     resetUploadedImage: function() {
       this.uploadedImageFullPath = ''
       this.uploadedImageUrl = ''
+      this.$refs.imgFile.value = ''
+    },
+    deleteUploadedImage: function() {
+      const ref = storageRef.child(this.uploadedImageFullPath)
+      ref.delete()
+        .then(() => {
+          console.log('削除成功')
+          this.resetUploadedImage()
+        })
+        .catch(() => {
+          this.showNotification('削除に失敗しました', 'error')
+        })
     },
     init: function() {
       this.getDishDocument()
